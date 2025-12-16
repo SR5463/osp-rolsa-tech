@@ -1,0 +1,28 @@
+/* Products page styles - visually matches Figma */
+
+.products-page { background: white; min-height: 100vh; }
+
+.products-header { display:flex; align-items:center; justify-content:space-between; padding:40px 92px; border-bottom:1px solid #f0f0f0; }
+.brand { font-family:'Krona One', sans-serif; color:#53b394; font-size:55px; margin:0; }
+.products-nav { display:flex; gap:40px; align-items:center; margin-left:auto; margin-right:40px; }
+.nav-item { font-family:'Schibsted Grotesk', sans-serif; font-size:18px; color:#111; cursor:pointer; }
+.nav-item.active { font-weight:600; }
+.signin { background:#53b394; color:#fff; padding:12px 20px; border-radius:20px; }
+
+.products-main { max-width:1200px; margin:60px auto; padding:0 24px; }
+.products-title { font-family:'Schibsted Grotesk', sans-serif; font-size:64px; text-align:center; margin:0 0 20px; }
+.products-sub { font-family:'Schibsted Grotesk', sans-serif; font-size:20px; text-align:center; color:#333; margin:0 0 40px; }
+
+.products-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:40px; }
+.product-card { background:white; border:2px solid #53b394; border-radius:20px; padding:0; overflow:hidden; display:flex; flex-direction:column; }
+.product-media img { width:100%; height:240px; object-fit:cover; display:block; }
+.product-card h2 { font-family:'Schibsted Grotesk', sans-serif; font-size:40px; margin:20px; }
+.product-card h3 { font-family:'Schibsted Grotesk', sans-serif; font-size:24px; margin:0 20px 12px; }
+.features-list { margin:0 20px 20px 40px; padding:0; font-size:16px; color:#111; }
+.features-list li { margin-bottom:8px; }
+.product-footer { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px; margin-top:auto; }
+.price { font-size:20px; font-weight:600; }
+.schedule-btn { background:#53b394; color:white; border:none; padding:12px 20px; border-radius:12px; cursor:pointer; }
+
+@media (max-width:1024px) { .products-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width:768px) { .products-grid { grid-template-columns: 1fr; } .products-header{padding:20px;} .products-main{margin:30px auto;} }

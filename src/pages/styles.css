@@ -1,53 +1,347 @@
-:root{
-	--accent:#53b394;
-	--text:#111;
-	--muted:#666;
-	--max:1200px;
+:root {
+  --accent: #53b394;
+  --text: #111;
+  --muted: #666;
+  --max: 1200px;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-	margin:0;
-	font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-	color:var(--text);
-	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale;
+* {
+  box-sizing: border-box;
 }
 
-.container{max-width:var(--max);margin:0 auto;padding:0 160px}
+html,
+body {
+  height: 100%;
+}
 
-.site-header{padding:28px 0}
-.header-inner{display:flex;align-items:center;gap:24px}
-.logo{font-family:'Krona One', sans-serif;color:var(--accent);font-size:40px;margin:0}
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-.nav{margin-left:auto}
-.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;align-items:center}
-.nav a{color:#111;text-decoration:none;font-weight:500}
+/* Main Consultation Container */
+.consultation-container {
+  width: 100%;
+  background-color: white;
+  min-height: 100vh;
+  position: relative;
+}
 
-.btn{display:inline-block;padding:12px 20px;border-radius:20px;text-decoration:none;font-weight:600}
-.btn-signin{background:var(--accent);color:#fff}
-.btn-primary{background:var(--accent);color:#fff}
-.btn-outline{background:#fff;color:var(--text);border:2px solid var(--accent);padding:10px 18px}
-.btn.small{padding:8px 12px;border-radius:14px}
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 41px 83px;
+  background-color: white;
+  border-bottom: 1px solid #f0f0f0;
+}
 
-.hero{display:flex;align-items:flex-start;gap:60px;padding:100px 0}
-.hero-left{flex:1;max-width:52%}
-.hero-right{flex:1;max-width:45%;display:flex;justify-content:flex-end}
-.hero-right img{max-height:320px}
-.hero-right img{width:100%;height:auto;border-radius:15px;object-fit:cover}
+.brand-title {
+  font-family: 'Krona One', sans-serif;
+  font-size: 55px;
+  font-weight: 400;
+  color: #53b394;
+  margin: 0;
+  white-space: nowrap;
+}
 
-.hero-title{color:var(--accent);font-size:56px;line-height:1.02;margin:0 0 18px;font-weight:400;font-family:Poppins, sans-serif}
-.hero-sub{color:var(--text);margin:0 0 24px;max-width:640px}
-.hero-cta{display:flex;gap:16px;margin-top:8px}
+.nav-links {
+  display: flex;
+  gap: 135px;
+  margin: 0;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
 
-.section-title{text-align:center;font-size:28px;margin:64px 0}
+.nav-links p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  cursor: pointer;
+}
 
-.features{display:flex;justify-content:space-between;gap:18px;padding:40px 0}
-.feature{flex:1;text-align:center;padding:10px}
-.feature-art{width:84px;height:84px;object-fit:contain;margin:0 auto 16px;display:block}
-.feature h4{margin:8px 0 8px;font-size:20px}
-.feature p{margin:0;color:var(--muted);font-size:14px}
+.sign-in-button {
+  background-color: #53b394;
+  border-radius: 25px;
+  width: 125px;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sign-in-button p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 29px;
+  font-weight: 400;
+  color: #f5f5f5;
+  margin: 0;
+}
+
+/* Main Content */
+.main-content {
+  padding: 60px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  margin: 0 0 60px 0;
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+/* Form Groups */
+.two-column-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.input-field {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 25px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 18px;
+  background-color: white;
+  min-height: 85px;
+  box-sizing: border-box;
+}
+
+.input-field::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #53b394;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 215px;
+}
+
+/* Service Options */
+.service-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+  min-height: 143px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-card:hover {
+  border-color: #53b394;
+  background-color: rgba(83, 179, 148, 0.1);
+}
+
+.service-card.selected {
+  background-color: #53b394;
+  border-color: #53b394;
+}
+
+.service-card.selected .service-title,
+.service-card.selected .service-description {
+  color: white;
+}
+
+.service-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 29px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+.service-description {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Submit Section */
+.submit-section {
+  margin-top: 80px;
+}
+
+.cta-box {
+  background-color: rgba(83, 179, 148, 0.6);
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-box p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  text-align: center;
+}
+
+.cta-link {
+  text-decoration: underline;
+  color: black;
+  cursor: pointer;
+}
+
+.cta-link:hover {
+  color: #53b394;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #53b394;
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 110px;
+}
+
+.submit-button:hover {
+  background-color: #4a9b7f;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .nav-links {
+    gap: 30px;
+    margin-right: 0;
+  }
+
+  .main-content {
+    padding: 30px 20px;
+  }
+
+  .main-title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .two-column-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-options {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+  }
+
+  .input-field {
+    min-height: 60px;
+    padding: 15px;
+  }
+
+  .textarea {
+    min-height: 150px;
+  }
+}
 
 .two-col{display:flex;align-items:center;gap:32px;padding:80px 0}
 .calc-image img{width:100%;height:auto;border-radius:18px;object-fit:cover}

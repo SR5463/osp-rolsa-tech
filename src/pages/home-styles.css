@@ -1,0 +1,547 @@
+/* Home Page Styles - Matches Figma Design */
+
+.home-container {
+  width: 100%;
+  background-color: white;
+  min-height: 100vh;
+}
+
+/* Header */
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 92px;
+  background-color: white;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.home-brand-title {
+  font-family: 'Krona One', sans-serif;
+  font-size: 55px;
+  font-weight: 400;
+  color: #53b394;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.home-nav-links {
+  display: flex;
+  gap: 135px;
+  margin: 0;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+.home-nav-links p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.home-nav-links p:hover {
+  color: #53b394;
+}
+
+.nav-book {
+  cursor: pointer;
+}
+
+.home-sign-in-button {
+  background-color: #53b394;
+  border-radius: 25px;
+  width: 125px;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-sign-in-button:hover {
+  background-color: #4a9b7f;
+}
+
+.home-sign-in-button p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 29px;
+  font-weight: 400;
+  color: #f5f5f5;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 120px 188px;
+  background-color: white;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-main-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 75px;
+  font-weight: 400;
+  color: #53b394;
+  margin: 0 0 30px 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.hero-description {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 40px 0;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-button {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  border: none;
+  border-radius: 20px;
+  padding: 18px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.explore-btn {
+  background-color: #53b394;
+  color: white;
+  width: 279px;
+}
+
+.explore-btn:hover {
+  background-color: #4a9b7f;
+}
+
+.schedule-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #53b394;
+  width: 279px;
+}
+
+.schedule-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 80px 188px;
+  background-color: white;
+}
+
+.section-heading {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 55px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  margin: 0 0 60px 0;
+}
+
+.features-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-star,
+.icon-people,
+.icon-wrench {
+  width: 80px;
+  height: 80px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon-star::before {
+  content: "★";
+  font-size: 40px;
+  color: black;
+}
+
+.icon-people::before {
+  content: "👥";
+  font-size: 40px;
+}
+
+.icon-wrench::before {
+  content: "🔧";
+  font-size: 40px;
+}
+
+.feature-item h3 {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 20px 0;
+}
+
+.feature-item p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 29px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+}
+
+.feature-image {
+  width: 100%;
+  max-width: 428px;
+  height: 354px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.feature-image.small {
+  max-width: 133px;
+  height: 132px;
+}
+
+/* Calculator Section */
+.calculator-section {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 100px 188px;
+  background-color: white;
+}
+
+.calculator-image {
+  flex: 1;
+  min-width: 400px;
+}
+
+.calculator-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.calculator-content {
+  flex: 1;
+}
+
+.calculator-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 75px;
+  font-weight: 400;
+  color: #53b394;
+  margin: 0 0 30px 0;
+  line-height: 1.1;
+}
+
+.calculator-description {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 40px 0;
+  line-height: 1.5;
+}
+
+.calculator-button {
+  background-color: #53b394;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 30px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calculator-button:hover {
+  background-color: #4a9b7f;
+}
+
+/* Track Energy Section */
+.track-energy-section {
+  padding: 100px 188px;
+  background-color: white;
+}
+
+.track-energy-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 75px;
+  font-weight: 400;
+  color: #53b394;
+  margin: 0 0 20px 0;
+}
+
+.track-energy-description {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 40px 0;
+}
+
+.track-energy-button {
+  background-color: #53b394;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-energy-button:hover {
+  background-color: #4a9b7f;
+}
+
+/* Footer */
+.home-footer {
+  background-color: white;
+  padding: 40px 188px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-left p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-right p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-right p:hover {
+  color: #53b394;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home-header {
+    padding: 30px 50px;
+  }
+
+  .home-nav-links {
+    gap: 80px;
+  }
+
+  .hero-section,
+  .why-choose-section,
+  .calculator-section,
+  .track-energy-section {
+    padding: 60px 50px;
+  }
+
+  .features-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .home-brand-title {
+    font-size: 36px;
+  }
+
+  .home-nav-links {
+    gap: 30px;
+    margin-right: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .home-nav-links p {
+    font-size: 18px;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .hero-text,
+  .calculator-content {
+    max-width: 100%;
+  }
+
+  .hero-image,
+  .calculator-image {
+    min-width: 100%;
+  }
+
+  .hero-main-title,
+  .calculator-title,
+  .track-energy-title {
+    font-size: 40px;
+  }
+
+  .hero-description,
+  .calculator-description,
+  .track-energy-description {
+    font-size: 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-button,
+  .calculator-button {
+    width: 100%;
+  }
+
+  .why-choose-section,
+  .track-energy-section {
+    padding: 40px 20px;
+  }
+
+  .section-heading {
+    font-size: 32px;
+  }
+
+  .features-showcase {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .feature-item h3 {
+    font-size: 24px;
+  }
+
+  .feature-item p {
+    font-size: 18px;
+  }
+
+  .calculator-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .home-footer {
+    padding: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-left,
+  .footer-right {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-left p,
+  .footer-right p {
+    font-size: 18px;
+  }
+}
