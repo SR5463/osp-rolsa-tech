@@ -1,26 +1,12 @@
 import './products-styles.css';
 
-const img5 = "https://www.figma.com/api/mcp/asset/14a69d22-6a02-4dbc-9bd2-a51c6e7538d3";
-const img6 = "https://www.figma.com/api/mcp/asset/0c899f60-5a76-447c-9801-86c66cd44263";
-const img11 = "https://www.figma.com/api/mcp/asset/d144076e-dc32-4bc7-985b-c4572e43b09a";
-const img12 = "https://www.figma.com/api/mcp/asset/737484ad-9e5d-4ef1-8300-bbcdebe9b1a2";
-const img13 = "https://www.figma.com/api/mcp/asset/2f81cf58-7b72-48ca-9d16-dec78c57b3dd";
-const img14 = "https://www.figma.com/api/mcp/asset/a24b044e-f641-4aa7-aa58-2150d3ac852a";
+const img5 = "https://dailynewshungary.b-cdn.net/wp-content/uploads/2024/04/solar-panel.jpg";
+const img12 = "https://nexblue.com/cdn/shop/files/Frame_197045_1.jpg?v=1706847562&width=1296";
+const img14 = "https://miro.medium.com/v2/resize:fit:828/format:webp/1*SPjK4Lp94t68FNeTH3MNPQ.png";
 
-export default function Products({ onBackToHome, onNavigateToBooking }) {
+export default function Products({ onNavigateToBooking }) {
   return (
     <div className="products-page">
-      <header className="products-header">
-        <p className="brand" onClick={onBackToHome} style={{cursor: 'pointer'}}>Rolsa Technology</p>
-        <nav className="products-nav">
-          <p className="nav-item active">Products</p>
-          <p className="nav-item" onClick={onNavigateToBooking}>Calculator</p>
-          <p className="nav-item">Tracker</p>
-          <p className="nav-item" onClick={onNavigateToBooking}>Book</p>
-        </nav>
-        <div className="signin">Sign in</div>
-      </header>
-
       <main className="products-main">
         <h1 className="products-title">Green Energy Products</h1>
         <p className="products-sub">Discover our comprehensive range of sustainable energy solutions. From solar panels to smart home systems, we have everything you need to reduce your carbon footprint.</p>

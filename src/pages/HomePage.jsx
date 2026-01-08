@@ -1,29 +1,12 @@
 import './home-styles.css';
 
-const imgHeroImage = "https://www.figma.com/api/mcp/asset/812f429b-4f6f-4725-9bea-f1a5fd7e1e7f";
-const imgExpertInstallation = "https://www.figma.com/api/mcp/asset/8a7e0a9f-2faa-41bf-bff4-a4355a644562";
-const imgCustomerSupport = "https://www.figma.com/api/mcp/asset/d0d51c32-2f5c-4321-a3e2-5a5e81d4ffda";
-const imgSustainableImpact = "https://www.figma.com/api/mcp/asset/bf996a05-2e23-4217-8b6b-08163ddeff26";
-const imgCarbonFootprint = "https://www.figma.com/api/mcp/asset/c22125c6-1138-4a7f-846e-1aee2d2766c0";
-const imgLogo = "https://www.figma.com/api/mcp/asset/527f3a6a-5dc8-4e35-baa7-4c13bea5a45b";
+const imgHeroImage = "https://i0.wp.com/ent.news/2024/12/2614.jpg?fit=1200%2C9999&ssl=1";
+const imgCarbonFootprint = "https://www.nord-lock.com/contentassets/d67fb34ad79840a6b940b9a6c5a028be/imagesvdj9.png";
+const imgWindTurbines = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpd1IiDFGpz3Ni61lnIajP0v7BIRtaqiLU81GjHMcBzB4xxYap";
 
-export default function HomePage({ onNavigateToBooking, onNavigateToProducts }) {
+export default function HomePage({ onNavigateToBooking, onNavigateToProducts, onNavigateToCalculator }) {
   return (
     <div className="home-container">
-      {/* Header */}
-      <header className="home-header">
-        <p className="home-brand-title">Rolsa Technology</p>
-        <nav className="home-nav-links">
-          <p onClick={onNavigateToProducts} style={{ cursor: 'pointer' }}>Products</p>
-          <p>Calculator</p>
-          <p>Tracker</p>
-          <p className="nav-book" onClick={onNavigateToBooking}>Book</p>
-        </nav>
-        <div className="home-sign-in-button">
-          <p>Sign in</p>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-text">
@@ -52,7 +35,6 @@ export default function HomePage({ onNavigateToBooking, onNavigateToProducts }) 
             </div>
             <h3>Expert Installation</h3>
             <p>Certified professionals with years of experience in green technology</p>
-            <img src={imgExpertInstallation} alt="Expert Installation" className="feature-image" />
           </div>
 
           <div className="feature-item">
@@ -61,7 +43,6 @@ export default function HomePage({ onNavigateToBooking, onNavigateToProducts }) 
             </div>
             <h3>Customer Support</h3>
             <p>Dedicated support team available to help you every step of the way</p>
-            <img src={imgCustomerSupport} alt="Customer Support" className="feature-image small" />
           </div>
 
           <div className="feature-item">
@@ -69,8 +50,7 @@ export default function HomePage({ onNavigateToBooking, onNavigateToProducts }) 
               <div className="icon-wrench"></div>
             </div>
             <h3>Sustainable Impact</h3>
-            <p>Dedicated support team available to help you every step of the way</p>
-            <img src={imgSustainableImpact} alt="Sustainable Impact" className="feature-image" />
+            <p>Practical solutions that reduce emissions and support community sustainability</p>
           </div>
         </div>
       </section>
@@ -85,31 +65,23 @@ export default function HomePage({ onNavigateToBooking, onNavigateToProducts }) 
           <p className="calculator-description">
             Understand your environmental impact and discover personalized recommendations to reduce your carbon emissions. Take the first step towards a greener lifestyle.
           </p>
-          <button className="calculator-button" onClick={onNavigateToBooking}>Calculator</button>
+          <button className="calculator-button" onClick={onNavigateToCalculator}>Calculator</button>
         </div>
       </section>
 
       {/* Track Energy Section */}
       <section className="track-energy-section">
-        <h2 className="track-energy-title">Track Energy Usage</h2>
-        <p className="track-energy-description">Reduce the amount of energy you consume daily.</p>
-        <button className="track-energy-button">Track Energy Usage</button>
-      </section>
-
-      {/* Footer */}
-      <footer className="home-footer">
-        <div className="footer-content">
-          <div className="footer-left">
-            <img src={imgLogo} alt="Logo" className="footer-logo" />
-            <p>Rolsa Technologies. Powered by sustainable energy.</p>
+        <div className="track-energy-content">
+          <div className="track-energy-text">
+            <h2 className="track-energy-title">Track Energy Usage</h2>
+            <p className="track-energy-description">Reduce the amount of energy you consume daily.</p>
+            <button className="track-energy-button">Track Energy Usage</button>
           </div>
-          <div className="footer-right">
-            <p>FAQ</p>
-            <p>Policy</p>
-            <p>Legal</p>
+          <div className="track-energy-image">
+            <img src={imgWindTurbines} alt="Wind turbines" />
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }

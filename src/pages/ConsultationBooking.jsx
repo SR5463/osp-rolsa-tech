@@ -1,15 +1,7 @@
 import { useState } from 'react';
 import './styles.css';
 
-function SignInButton() {
-  return (
-    <div className="sign-in-button">
-      <p>Sign in</p>
-    </div>
-  );
-}
-
-export default function ConsultationBooking({ onBackToHome, onNavigateToProducts }) {
+export default function ConsultationBooking({ onNavigateToProducts }) {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -23,45 +15,29 @@ export default function ConsultationBooking({ onBackToHome, onNavigateToProducts
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData(prev => (({
       ...prev,
       [name]: value
-    }));
+    })));
   };
 
   const handleServiceSelect = (service) => {
-    setFormData(prev => ({
+    setFormData(prev => (({
       ...prev,
       serviceType: service
-    }));
+    })));
   };
 
   const handleSubmit = () => {
     console.log('Form submitted:', formData);
-    // Handle form submission
   };
 
   return (
     <div className="consultation-container">
-      {/* Header */}
-      <header className="header">
-        <p className="brand-title" onClick={onBackToHome} style={{ cursor: 'pointer' }}>Rolsa Technology</p>
-        <nav className="nav-links">
-          <p onClick={onNavigateToProducts} style={{ cursor: 'pointer' }}>Products</p>
-          <p>Calculator</p>
-          <p>Tracker</p>
-          <p onClick={onBackToHome} style={{ cursor: 'pointer' }}>Book</p>
-        </nav>
-        <SignInButton />
-      </header>
-
-      {/* Main Content */}
       <main className="main-content">
-        {/* Title Section */}
         <h1 className="main-title">Schedule a Consultation</h1>
         <p className="subtitle">Book a free consultation with our energy experts</p>
 
-        {/* Personal Information Section */}
         <section className="form-section">
           <h2 className="section-title">Personal Information</h2>
           
@@ -100,7 +76,6 @@ export default function ConsultationBooking({ onBackToHome, onNavigateToProducts
           </div>
         </section>
 
-        {/* Service Type Section */}
         <section className="form-section">
           <h2 className="section-title">Service Type</h2>
           
@@ -129,7 +104,6 @@ export default function ConsultationBooking({ onBackToHome, onNavigateToProducts
           </div>
         </section>
 
-        {/* Date & Time Section */}
         <section className="form-section">
           <h2 className="section-title">Preferred Date & Time</h2>
           
@@ -164,7 +138,6 @@ export default function ConsultationBooking({ onBackToHome, onNavigateToProducts
           </div>
         </section>
 
-        {/* Property Address Section */}
         <section className="form-section">
           <div className="form-group full-width">
             <label>Property Address</label>
@@ -179,7 +152,6 @@ export default function ConsultationBooking({ onBackToHome, onNavigateToProducts
           </div>
         </section>
 
-        {/* Additional Notes Section */}
         <section className="form-section">
           <div className="form-group full-width">
             <label>Additional Notes</label>
@@ -193,7 +165,6 @@ export default function ConsultationBooking({ onBackToHome, onNavigateToProducts
           </div>
         </section>
 
-        {/* Submit Section */}
         <section className="submit-section">
           <div className="cta-box">
             <p>
