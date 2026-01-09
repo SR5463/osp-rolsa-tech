@@ -56,6 +56,29 @@ body {
   margin: 0 0 60px 0;
 }
 
+/* Messages */
+.consultation-error {
+  background-color: #ffebee;
+  border: 2px solid #d32f2f;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 16px;
+  color: #d32f2f;
+}
+
+.consultation-success {
+  background-color: #e8f5e9;
+  border: 2px solid #4caf50;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 16px;
+  color: #4caf50;
+}
+
 /* Form Sections */
 .form-section {
   margin-bottom: 60px;
@@ -229,9 +252,14 @@ body {
   min-height: 110px;
 }
 
-.submit-button:hover {
+.submit-button:hover:not(:disabled) {
   background-color: #4a9b7f;
   transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Responsive Design */

@@ -1,35 +1,113 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css';
 
-export default function ConsultationBooking({ onNavigateToProducts }) {
+export default function ConsultationBooking() {
   const [formData, setFormData] = useState({
-    fullName: '',
+    full_name: '',
     email: '',
     phone: '',
-    serviceType: '',
+    service_type: '',
     date: '',
     time: '',
     address: '',
     notes: ''
   });
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const today = new Date().toISOString().split('T')[0];
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true);
+      fetchUserData(token);
+    }
+  }, []);
+
+  const fetchUserData = async (token) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/user', {
+        method: 'GET',
+        headers: { 
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setFormData(prev => ({
+          ...prev,
+          full_name: data.full_name || '',
+          email: data.email || ''
+        }));
+      }
+    } catch (err) {
+      console.error('Error fetching user data:', err);
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => (({
+    setFormData(prev => ({
       ...prev,
       [name]: value
-    })));
+    }));
   };
 
   const handleServiceSelect = (service) => {
-    setFormData(prev => (({
+    setFormData(prev => ({
       ...prev,
-      serviceType: service
-    })));
+      service_type: service
+    }));
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setSuccess(false);
+
+    if (!isAuthenticated) {
+      setError('Please sign in to book a consultation');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://localhost:5000/api/consultations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to schedule consultation');
+        return;
+      }
+
+      setSuccess(true);
+      setFormData({
+        full_name: formData.full_name,
+        email: formData.email,
+        phone: '',
+        service_type: '',
+        date: '',
+        time: '',
+        address: '',
+        notes: ''
+      });
+    } catch (err) {
+      setError('Connection error. Make sure the backend is running.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -37,6 +115,9 @@ export default function ConsultationBooking({ onNavigateToProducts }) {
       <main className="main-content">
         <h1 className="main-title">Schedule a Consultation</h1>
         <p className="subtitle">Book a free consultation with our energy experts</p>
+
+        {error && <div className="consultation-error">{error}</div>}
+        {success && <div className="consultation-success">Consultation scheduled successfully!</div>}
 
         <section className="form-section">
           <h2 className="section-title">Personal Information</h2>
@@ -46,8 +127,8 @@ export default function ConsultationBooking({ onNavigateToProducts }) {
               <label>Full name:</label>
               <input
                 type="text"
-                name="fullName"
-                value={formData.fullName}
+                name="full_name"
+                value={formData.full_name}
                 onChange={handleInputChange}
                 className="input-field"
               />
@@ -81,21 +162,21 @@ export default function ConsultationBooking({ onNavigateToProducts }) {
           
           <div className="service-options">
             <div 
-              className={`service-card ${formData.serviceType === 'solar' ? 'selected' : ''}`}
+              className={`service-card ${formData.service_type === 'solar' ? 'selected' : ''}`}
               onClick={() => handleServiceSelect('solar')}
             >
               <p className="service-title">Solar panels</p>
               <p className="service-description">Installation & Maintenance</p>
             </div>
             <div 
-              className={`service-card ${formData.serviceType === 'ev' ? 'selected' : ''}`}
+              className={`service-card ${formData.service_type === 'ev' ? 'selected' : ''}`}
               onClick={() => handleServiceSelect('ev')}
             >
               <p className="service-title">EV Charging</p>
               <p className="service-description">Charging station setup</p>
             </div>
             <div 
-              className={`service-card ${formData.serviceType === 'smart' ? 'selected' : ''}`}
+              className={`service-card ${formData.service_type === 'smart' ? 'selected' : ''}`}
               onClick={() => handleServiceSelect('smart')}
             >
               <p className="service-title">Smart Home</p>
@@ -115,6 +196,7 @@ export default function ConsultationBooking({ onNavigateToProducts }) {
                 name="date"
                 value={formData.date}
                 onChange={handleInputChange}
+                min={today}
                 className="input-field"
               />
             </div>
@@ -166,14 +248,16 @@ export default function ConsultationBooking({ onNavigateToProducts }) {
         </section>
 
         <section className="submit-section">
-          <div className="cta-box">
-            <p>
-              <a href="https://example.com/register" className="cta-link">Create an account</a>
-              {` to manage your consultations and track your energy savings.`}
-            </p>
-          </div>
-          <button className="submit-button" onClick={handleSubmit}>
-            Schedule Consultation
+          {!isAuthenticated && (
+            <div className="cta-box">
+              <p>
+                <a href="#" className="cta-link">Create an account</a>
+                {` to manage your consultations and track your energy savings.`}
+              </p>
+            </div>
+          )}
+          <button className="submit-button" onClick={handleSubmit} disabled={loading}>
+            {loading ? 'Scheduling...' : 'Schedule Consultation'}
           </button>
         </section>
       </main>
