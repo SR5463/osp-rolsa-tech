@@ -1,8 +1,8 @@
 import './home-styles.css';
 
-const imgHeroImage = "https://i0.wp.com/ent.news/2024/12/2614.jpg?fit=1200%2C9999&ssl=1";
-const imgCarbonFootprint = "https://www.nord-lock.com/contentassets/d67fb34ad79840a6b940b9a6c5a028be/imagesvdj9.png";
-const imgWindTurbines = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpd1IiDFGpz3Ni61lnIajP0v7BIRtaqiLU81GjHMcBzB4xxYap";
+const imgHeroImage = "/solar_panels.jpg";
+const imgNuclearPower = "/nuclear_power.png";
+const imgWindTurbines = "/wind_turbines.jpg";
 
 export default function HomePage({ onNavigateToBooking, onNavigateToProducts, onNavigateToCalculator }) {
   return (
@@ -58,7 +58,7 @@ export default function HomePage({ onNavigateToBooking, onNavigateToProducts, on
       {/* Calculator Section */}
       <section className="calculator-section">
         <div className="calculator-image">
-          <img src={imgCarbonFootprint} alt="Carbon footprint calculator" />
+          <img src={imgNuclearPower} alt="Carbon footprint calculator" />
         </div>
         <div className="calculator-content">
           <h2 className="calculator-title">Calculate Your<br />Carbon Footprint</h2>
